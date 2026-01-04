@@ -12,9 +12,9 @@ if __name__ == "__main__":
 
     os.makedirs(OUTPUT_ROOT, exist_ok=True)
 
-    # --------------------------------
+    # -----------------------------------------------
     # Run multiprocessing experiments for each folder
-    # --------------------------------
+    # -----------------------------------------------
     for folder in DATA_FOLDERS:
         INPUT_DIR = os.path.join("data", folder)
         OUTPUT_DIR = os.path.join(OUTPUT_ROOT, folder)
@@ -41,9 +41,9 @@ if __name__ == "__main__":
             results.append({"process": num_proc, "time": duration})
 
         # Output results
-        print("\n========================================")
-        print("Multiprocessing Performance Results")
-        print("========================================")
+        print("\n" + "="*80)
+        print(f"Multiprocessing Performance Results ({len(images)} images in '{folder}' dataset)")
+        print("="*80)
         for r in results:
             print(f"Process: {r['process']} | Time: {r['time']:.2f} seconds")
 
