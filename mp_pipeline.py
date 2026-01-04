@@ -3,6 +3,7 @@ import time
 import numpy as np
 from PIL import Image
 from multiprocessing import Pool, current_process
+import psutil
 import filters  
 
 # --------------------------------
@@ -11,12 +12,17 @@ import filters
 def process_single_image(args):
     img_path, output_folder = args
     try:
-        # Get OS-assigned CPU core (Linux only)
-        core_id = os.sched_getcpu()  
         pid = os.getpid()
-        filename = os.path.basename(img_path)
+        
+        # Get CPU core using psutil
+        try:
+            core_id = psutil.Process(pid).cpu_num()
+            core_info = f"CPU Core ID: {core_id}"
+        except Exception:
+            core_info = "CPU Core ID: N/A"
 
-        print(f"[CPU Core ID: {core_id} PID:{pid}] Processing image {filename}")
+        filename = os.path.basename(img_path)
+        print(f"[{core_info} PID:{pid}] Processing image {filename}")
 
         with Image.open(img_path) as img:
             arr = np.array(img.convert("RGB"))
