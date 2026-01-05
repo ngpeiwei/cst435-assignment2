@@ -26,9 +26,6 @@ if __name__ == "__main__":
             if f.lower().endswith((".jpg", ".jpeg", ".png"))
         ]
 
-        # Optional: limit to first 25 images for testing
-        # images = images[:25]
-
         print(f"\nStarting Multiprocessing Pipeline with {len(images)} images from folder: {folder}")
         results = []
 
