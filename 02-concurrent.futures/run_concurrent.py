@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # --------------------------------
     DATA_FOLDERS = ["random_images", "small_images"]
     OUTPUT_ROOT = "output_concurrent"
-    THREAD_COUNTS = [1, 2, 4, 8]
+    PROCESS_COUNTS = [1, 2, 4, 8] ## change as needed
 
     os.makedirs(OUTPUT_ROOT, exist_ok=True)
 
@@ -30,20 +30,20 @@ if __name__ == "__main__":
         print(f"\nStarting Concurrent Futures Pipeline with {len(images)} images from folder: {folder}")
         results = []
 
-        for num_threads in THREAD_COUNTS:
+        for num_process in PROCESS_COUNTS:
             print("\n--------------------------")
-            print(f"Running with {num_threads} threads")
+            print(f"Running with {num_process} processes")
             print("--------------------------")
 
-            duration = run_test(images, OUTPUT_DIR, num_threads)
-            results.append({"thread": num_threads, "time": duration})
+            duration = run_test(images, OUTPUT_DIR, num_process)
+            results.append({"process": num_process, "time": duration})
 
         # Output results
         print("\n" + "=" * 80)
         print(f"Concurrent Futures Performance Results ({len(images)} images in '{folder}' dataset)")
         print("=" * 80)
         for r in results:
-            print(f"Thread: {r['thread']} | Time: {r['time']:.2f} seconds")
+            print(f"Process: {r['process']} | Time: {r['time']:.2f} seconds")
 
         # Save CSV per folder
         csv_file = f"performance_results_{folder}_concurrent.csv"
