@@ -2,7 +2,7 @@ import os
 import time
 import numpy as np
 from PIL import Image
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import psutil
 import filters
 
@@ -53,7 +53,7 @@ def run_test(image_list, output_dir, num_workers):
 
     start_time = time.time()
 
-    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+    with ThreadPoolExecutor(max_workers=num_workers) as executor:
         futures = [executor.submit(process_single_image, task) for task in tasks]
 
         # Ensure all tasks complete (dynamic scheduling)
