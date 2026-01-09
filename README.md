@@ -22,7 +22,7 @@ All filters operate on individual pixels or small neighborhoods, making them sui
 ## Repo Structure
 
 ```bash
-CST435-Assignment-2/
+cst435-Assignment2/
 │
 ├── 01-multiprocessing-module/
 │   ├── data/                     # Image datasets (random_images, small_images)
