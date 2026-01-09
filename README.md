@@ -30,7 +30,7 @@ cst435-Assignment2/
 │   ├── mp_pipeline.py            # Multiprocessing pipeline implementation
 │   └── run_mp.py                 # Multiprocessing experiment runner
 │
-├── 02-concurrent-futures/
+├── 02-concurrent.futures/
 │   ├── data/                     # Image datasets (random_images, small_images)
 │   ├── concurrent_pipeline.py    # Concurrent.futures pipeline implementation
 │   ├── filters.py                # Shared image filter functions
