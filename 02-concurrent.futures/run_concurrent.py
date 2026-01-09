@@ -35,7 +35,7 @@ if __name__ == "__main__":
             print(f"Running with {num_threads} threads")
             print("--------------------------")
 
-            duration = run_test(images, OUTPUT_DIR, num_process)
+            duration = run_test(images, OUTPUT_DIR, num_threads)
             results.append({"threads": num_threads, "time": duration})
 
         # Output results
