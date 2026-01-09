@@ -48,7 +48,7 @@ if __name__ == "__main__":
         # Save CSV per folder
         csv_file = f"performance_results_{folder}_concurrent.csv"
         with open(csv_file, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=["thread", "time"])
+            writer = csv.DictWriter(f, fieldnames=["process", "time"])
             writer.writeheader()
             writer.writerows(results)
 
