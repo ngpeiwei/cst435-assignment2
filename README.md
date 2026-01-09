@@ -21,7 +21,7 @@ All filters operate on individual pixels or small neighborhoods, making them sui
 
 ## Repo Structure
 
-``bash
+```bash
 CST435-Assignment-2/
 │
 ├── 01-multiprocessing-module/
@@ -37,7 +37,7 @@ CST435-Assignment-2/
 │   └── run_concurrent.py         # Concurrent.futures experiment runner
 │
 └── README.md
-``
+```
 
 To guarantee modularity, clarity, and equitable performance comparison, each paradigm is implemented in its own directory.
 
