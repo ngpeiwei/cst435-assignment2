@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # --------------------------------
     DATA_FOLDERS = ["random_images", "small_images"]
     OUTPUT_ROOT = "output_concurrent"
-    THREAD_COUNTS = [1, 2, 4, 8] ## change as needed
+    THREAD_COUNTS = [1, 2, 4, 8] 
 
     os.makedirs(OUTPUT_ROOT, exist_ok=True)
 
