@@ -48,12 +48,12 @@ def process_single_image(args):
 # --------------------------------
 # Run concurrent.futures experiment
 # --------------------------------
-def run_test(image_list, output_dir, num_workers):
+def run_test(image_list, output_dir, num_threads):
     tasks = [(p, output_dir) for p in image_list]
 
     start_time = time.time()
 
-    with ThreadPoolExecutor(max_workers=num_workers) as executor:
+    with ThreadPoolExecutor(max_workers=num_threads) as executor:
         futures = [executor.submit(process_single_image, task) for task in tasks]
 
         # Ensure all tasks complete (dynamic scheduling)
