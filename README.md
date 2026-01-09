@@ -21,19 +21,22 @@ All filters operate on individual pixels or small neighborhoods, making them sui
 
 ## Repo Structure
 
-``ruby
-- cst435-Assignment2/
-  - 01-multiprocessing-module 
-    - data/                    # Image datasets (random_images, small_images)
-    - filters.py               # Image filter functions
-    - mp_pipeline.py           # Multiprocessing pipeline implementation
-    - run_mp.py                # Multiprocessing runner
-  - 02-concurrent-futures
-    - data/                    # Image datasets (random_images, small_images)
-    - concurrent_pipeline.py   # Concurrent.futures pipeline implementation
-    - filters.py               # Image filter functions
-    - run_concurrent.py        # Concurrent.futures experiment runner
-  - README.md
+``bash
+CST435-Assignment-2/
+│
+├── 01-multiprocessing-module/
+│   ├── data/                     # Image datasets (random_images, small_images)
+│   ├── filters.py                # Shared image filter functions
+│   ├── mp_pipeline.py            # Multiprocessing pipeline implementation
+│   └── run_mp.py                 # Multiprocessing experiment runner
+│
+├── 02-concurrent-futures/
+│   ├── data/                     # Image datasets (random_images, small_images)
+│   ├── concurrent_pipeline.py    # Concurrent.futures pipeline implementation
+│   ├── filters.py                # Shared image filter functions
+│   └── run_concurrent.py         # Concurrent.futures experiment runner
+│
+└── README.md
 ``
 
 To guarantee modularity, clarity, and equitable performance comparison, each paradigm is implemented in its own directory.
