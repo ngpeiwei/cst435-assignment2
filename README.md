@@ -112,7 +112,7 @@ This will execute the image processing pipeline using different process counts a
 ### 2. Executing the Concurrent.futures Module
 1. Navigate to the concurrent.futures folder
 ```python
-$ cd 02-concurrent-futures
+$ cd 02-concurrent.futures
 ```
 
 2. Execute the runner file
